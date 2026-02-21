@@ -1,1 +1,258 @@
-# -happy-birthday-baby-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+/* ✅ Scroll Enabled */
+body{
+    overflow-x:hidden;
+    overflow-y:auto;
+    scroll-behavior:smooth;
+}
+
+/* Sections */
+section{
+    min-height:100vh;
+    display:none;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:20px;
+}
+
+.active{display:flex;}
+
+h1{
+    font-size:clamp(22px,5vw,36px);
+    margin-bottom:15px;
+}
+
+/* Buttons */
+.btn{
+    padding:14px 30px;
+    border:none;
+    border-radius:30px;
+    font-size:16px;
+    cursor:pointer;
+    background:white;
+    color:#ff2f6e;
+    margin-top:15px;
+    transition:0.3s;
+}
+
+.btn:hover{transform:scale(1.05);}
+
+.option{
+    padding:14px 30px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin:15px;
+}
+
+.yes{background:#ff2f6e;color:white;}
+.no{
+    background:#444;
+    color:white;
+    position:absolute;
+}
+
+/* Pages Background */
+#p1{background:linear-gradient(135deg,#f083c6,#bf0050);color:white;}
+#p2{background:linear-gradient(135deg,#667eea,#da5252);color:white;}
+#p3{background:linear-gradient(135deg,#ff9a9e,#fad0c4);color:#4a0033;}
+#p4{background:linear-gradient(135deg,#ffecd2,#fcb69f);position:relative;}
+#p5{background:rgba(239,99,160,0.916);color:#730563;}
+
+/* Card */
+.card{
+    background:rgba(255,255,255,0.15);
+    padding:30px;
+    border-radius:20px;
+    animation:float 3s infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+}
+
+/* Responsive Gallery */
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:12px;
+    width:100%;
+    max-width:900px;
+    margin:20px 0;
+}
+
+.gallery img{
+    width:100%;
+    height:160px;
+    border-radius:15px;
+    object-fit:cover;
+}
+
+/* Single Image */
+img.single{
+    width:100%;
+    max-width:300px;
+    border-radius:20px;
+    margin:20px 0;
+}
+
+/* Floating Hearts */
+.heart{
+    position:fixed;
+    top:-10px;
+    color:#dd21ba;
+    animation:fall linear infinite;
+    pointer-events:none;
+    z-index:999;
+}
+
+@keyframes fall{
+    to{transform:translateY(110vh);}
+}
+
+/* Mobile spacing fix */
+@media(max-width:600px){
+    section{padding:25px 15px;}
+    .gallery img{height:140px;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<section id="p1" class="active">
+<div class="card">
+<h1>🎉 Happy Birthday Sakshi jii ❤️</h1>
+<audio id="song1" src="song1.mp3.mp3"></audio>
+<button class="btn" onclick="toggle('song1')">🎶 Play Song</button><br>
+<button class="btn" onclick="next(1)">Next 💫</button>
+</div>
+</section>
+
+<!-- PAGE 2 -->
+<section id="p2">
+<h1>💖 Madam jii 💖</h1>
+<div class="gallery">
+<img src="photo1.jpg.jpeg"> 
+<img src="photo2.jpg.jpeg">
+<img src="photo3.jpg.jpeg">
+<img src="photo4.jpg.jpeg">
+<img src="photo5.jpg.jpeg">
+</div>
+<audio id="song2" src="song2.mp3.mp3"></audio>
+<button class="btn" onclick="toggle('song2')">🎵 Play Song</button><br>
+<button class="btn" onclick="next(2)">Next ❤️</button>
+</section>
+
+<!-- PAGE 3 -->
+<section id="p3">
+<h1>💌 Our Beautiful Moments 💌</h1>
+<div class="gallery">
+<img src="p3_1.jpg.jpeg">
+<img src="p3_2.jpg.jpeg">
+<img src="p3_3.jpg.jpeg">
+<img src="p3_4.jpg.jpeg">
+<img src="p3_5.jpg.jpeg">
+<img src="p3_6.jpg.jpeg">
+<img src="p3_7.jpg.jpeg">
+<img src="p3_8.jpg.jpeg">
+<img src="p3_9.jpg.jpeg">
+<img src="p3_10.jpg.jpeg">
+</div>
+<audio id="song3" src="song3.mp3.mp3"></audio>
+<button class="btn" onclick="toggle('song3')">🎶 Play Song</button><br>
+<button class="btn" onclick="next(3)">Next 💍</button>
+</section>
+
+<!-- PAGE 4 -->
+<section id="p4">
+<img src="p4.jpg.jpeg" class="single">
+<p>“अगर मेरी धड़कन से पूछो वजह अपनी, 🥰</p>
+<p>तो वो भी सिर्फ तुम्हारा नाम लेगी। 💖</p>
+<p>इतनी मोहब्बत है तुमसे, 🤭</p>
+<p>कि मेरी खामोशी भी तुम्हें ढूँढ लेगी।” 😘</p>
+
+<h1>💍 Will You be my madam jii ❤️ ? 💍</h1>
+
+<audio id="song4" src="song4.mp3.mp3"></audio>
+<button class="btn" onclick="toggle('song4')">🎶 Play Song</button><br>
+<button class="option yes" onclick="saveAnswer()">YES</button>
+<button class="option no" id="noBtn">NO</button>
+</section>
+
+<!-- PAGE 5 -->
+<section id="p5">
+<img src="p5.jpg.jpeg" class="single">
+<p style="font-size:22px;">Happy birthday meri pyari gudiya 😘</p>
+<audio id="song5" src="song5.mp3.mp3"></audio>
+<button class="btn" onclick="toggle('song5')">🎶 Play Song</button>
+</section>
+
+<script>
+
+function stopAllSongs(){
+    document.querySelectorAll("audio").forEach(a=>{
+        a.pause();
+        a.currentTime = 0;
+    });
+}
+
+function next(n){
+    stopAllSongs();
+    document.getElementById("p"+n).classList.remove("active");
+    document.getElementById("p"+(n+1)).classList.add("active");
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function toggle(id){
+    stopAllSongs();
+    document.getElementById(id).play();
+}
+
+function saveAnswer(){
+    stopAllSongs();
+    document.querySelectorAll("section").forEach(s=>s.classList.remove("active"));
+    document.getElementById("p5").classList.add("active");
+    window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* NO Button Moves (mobile + laptop compatible) */
+document.getElementById("noBtn").onclick=function(){
+    this.style.left=Math.random()*70+"%";
+    this.style.top=Math.random()*70+"%";
+};
+
+/* Floating Hearts */
+setInterval(()=>{
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="❤️";
+    h.style.left=Math.random()*100+"vw";
+    h.style.animationDuration=(Math.random()*3+2)+"s";
+    document.body.appendChild(h);
+    setTimeout(()=>h.remove(),5000);
+},400);
+
+</script>
+
+</body>
+</html>
