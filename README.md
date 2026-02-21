@@ -13,7 +13,6 @@
     font-family:'Segoe UI',sans-serif;
 }
 
-/* Scroll Enabled */
 body{
     overflow-x:hidden;
     overflow-y:auto;
@@ -28,7 +27,7 @@ section{
     align-items:center;
     justify-content:center;
     text-align:center;
-    padding:20px;
+    padding:25px 15px;
 }
 
 .active{display:flex;}
@@ -89,23 +88,24 @@ h1{
     50%{transform:translateY(-12px);}
 }
 
-/* Responsive Gallery */
+/* 🔥 NEW GALLERY (ALL PHOTOS VERTICAL) */
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:15px;
+    display:flex;
+    flex-direction:column;   /* One below another */
+    align-items:center;
+    gap:20px;
     width:100%;
-    max-width:1000px;
-    margin:20px 0;
+    max-width:500px;
+    margin:20px auto;
 }
 
 .gallery img{
     width:100%;
-    height:auto;                /* FIXED */
-    max-height:320px;
-    border-radius:15px;
-    object-fit:contain;         /* NO CROP */
-    background:white;
+    max-width:400px;
+    height:auto;
+    border-radius:20px;
+    object-fit:contain;
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 /* Single Image */
@@ -132,10 +132,6 @@ img.single{
     to{transform:translateY(110vh);}
 }
 
-/* Mobile Adjustment */
-@media(max-width:600px){
-    section{padding:25px 15px;}
-}
 </style>
 </head>
 
@@ -204,7 +200,7 @@ img.single{
 
 <!-- PAGE 5 -->
 <section id="p5">
-<img src="p5.jpg.jpeg" class="single">
+<img src="p5.jpg" class="single">
 <p style="font-size:22px;">Happy birthday meri pyari gudiya 😘</p>
 <audio id="song5" src="song5.mp3.mp3"></audio>
 <button class="btn" onclick="toggle('song5')">🎶 Play Song</button>
@@ -238,13 +234,11 @@ function saveAnswer(){
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* NO Button Moves */
 document.getElementById("noBtn").onclick=function(){
     this.style.left=Math.random()*70+"%";
     this.style.top=Math.random()*70+"%";
 };
 
-/* Floating Hearts */
 setInterval(()=>{
     let h=document.createElement("div");
     h.className="heart";
