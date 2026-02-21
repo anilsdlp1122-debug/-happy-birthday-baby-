@@ -13,7 +13,7 @@
     font-family:'Segoe UI',sans-serif;
 }
 
-/* ✅ Scroll Enabled */
+/* Scroll Enabled */
 body{
     overflow-x:hidden;
     overflow-y:auto;
@@ -69,7 +69,7 @@ h1{
     position:absolute;
 }
 
-/* Pages Background */
+/* Page Backgrounds */
 #p1{background:linear-gradient(135deg,#f083c6,#bf0050);color:white;}
 #p2{background:linear-gradient(135deg,#667eea,#da5252);color:white;}
 #p3{background:linear-gradient(135deg,#ff9a9e,#fad0c4);color:#4a0033;}
@@ -92,24 +92,28 @@ h1{
 /* Responsive Gallery */
 .gallery{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-    gap:12px;
+    grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+    gap:15px;
     width:100%;
-    max-width:900px;
+    max-width:1000px;
     margin:20px 0;
 }
 
 .gallery img{
     width:100%;
-    height:160px;
+    height:auto;                /* FIXED */
+    max-height:320px;
     border-radius:15px;
-    object-fit:cover;
+    object-fit:contain;         /* NO CROP */
+    background:white;
 }
 
 /* Single Image */
 img.single{
     width:100%;
-    max-width:300px;
+    max-width:350px;
+    height:auto;
+    object-fit:contain;
     border-radius:20px;
     margin:20px 0;
 }
@@ -128,10 +132,9 @@ img.single{
     to{transform:translateY(110vh);}
 }
 
-/* Mobile spacing fix */
+/* Mobile Adjustment */
 @media(max-width:600px){
     section{padding:25px 15px;}
-    .gallery img{height:140px;}
 }
 </style>
 </head>
@@ -235,7 +238,7 @@ function saveAnswer(){
     window.scrollTo({top:0,behavior:'smooth'});
 }
 
-/* NO Button Moves (mobile + laptop compatible) */
+/* NO Button Moves */
 document.getElementById("noBtn").onclick=function(){
     this.style.left=Math.random()*70+"%";
     this.style.top=Math.random()*70+"%";
